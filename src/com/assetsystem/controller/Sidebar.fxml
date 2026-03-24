@@ -3,12 +3,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<VBox prefWidth="220.0" spacing="2" style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-width: 0 1 0 0;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefWidth="220.0" spacing="2" style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-width: 0 1 0 0;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assetsystem.controller.SidebarController">
     <padding><Insets top="10"/></padding>
-    <Button text="Dashboard" prefWidth="220" styleClass="side-button" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 10 20;"/>
-    <Button text="Add Asset" prefWidth="220" styleClass="side-button" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 10 20;"/>
-    <Button text="Allocated Assets" prefWidth="220" styleClass="side-button" style="-fx-background-color: #e9ecef; -fx-alignment: CENTER_LEFT; -fx-padding: 10 20;"/>
-    <Button text="Asset Life Cycle" prefWidth="220" styleClass="side-button" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 10 20;"/>
-    <Button text="Model" prefWidth="220" styleClass="side-button" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 10 20;"/>
-    <Button text="View Store" prefWidth="220" styleClass="side-button" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 10 20;"/>
+    <Button fx:id="btnDashboard" text="Dashboard" onAction="#onDashboard" prefWidth="220" styleClass="side-button" style="-fx-background-color: #e9ecef; -fx-alignment: CENTER_LEFT; -fx-padding: 10 20;"/>
+    <Button fx:id="btnAddAsset" text="Add Asset" onAction="#onAddAsset" prefWidth="220" styleClass="side-button" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 10 20;"/>
+    <Button fx:id="btnAllocatedAssets" text="Allocated Assets" onAction="#onAllocatedAssets" prefWidth="220" styleClass="side-button" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 10 20;"/>
+    <Button fx:id="btnAssetLifeCycle" text="Asset Life Cycle" onAction="#onAssetLifeCycle" prefWidth="220" styleClass="side-button" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 10 20;"/>
+    <Button fx:id="btnModel" text="Model" onAction="#onModel" prefWidth="220" styleClass="side-button" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 10 20;"/>
+    <Button fx:id="btnManageStore" text="Manage Store" onAction="#onManageStore" prefWidth="220" styleClass="side-button" style="-fx-background-color: transparent; -fx-alignment: CENTER_LEFT; -fx-padding: 10 20;"/>
 </VBox>

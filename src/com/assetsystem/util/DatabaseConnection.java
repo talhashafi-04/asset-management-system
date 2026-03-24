@@ -7,7 +7,7 @@ public class DatabaseConnection {
     // 127.0.0.1 is the universal address for 'this computer'
 	private static final String URL = "jdbc:sqlserver://127.0.0.1:1433;databaseName=AssetSystem;encrypt=true;trustServerCertificate=true;";
     private static final String USER = "sa"; 
-    private static final String PASS = "password123"; // Use the password you set in Step 2
+    private static final String PASS = "Admin@12345"; // Use the password you set in Step 2
 
     public static Connection getConnection() {
         try {

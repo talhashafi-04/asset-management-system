@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assetsystem.controller.AddAssetController">
+
+    <top>
+        <fx:include fx:id="topbar" source="Topbar.fxml"/>
+    </top>
+
+    <left>
+        <fx:include fx:id="sidebar" source="Sidebar.fxml"/>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: white;">
+            <VBox spacing="16" style="-fx-background-color: white;">
+                <padding><Insets bottom="24" left="24" right="24" top="24"/></padding>
+
+                <Label text="Add Asset" style="-fx-font-size: 24px; -fx-text-fill: #337ab7;"/>
+
+                <GridPane hgap="12" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="140" prefWidth="160"/>
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="300"/>
+                    </columnConstraints>
+
+                    <Label text="Model *" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <ComboBox fx:id="comboModel" promptText="Select model" prefWidth="480" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                    <Label text="Serial number *" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <TextField fx:id="fieldSerial" promptText="Unique product serial" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                    <Label text="Purchase date *" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <DatePicker fx:id="pickerPurchaseDate" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                    <Label text="Price *" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                    <TextField fx:id="fieldPrice" promptText="0.00" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                    <Label text="Allocation status *" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                    <ComboBox fx:id="comboStatus" promptText="Select status" prefWidth="320" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                    <Label text="Remarks" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.valignment="TOP"/>
+                    <TextArea fx:id="areaRemarks" promptText="Optional notes" prefRowCount="4" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                </GridPane>
+
+                <HBox spacing="12">
+                    <Button fx:id="btnSave" text="Save" defaultButton="true" onAction="#onSave" style="-fx-background-color: #337ab7; -fx-text-fill: white; -fx-padding: 8 20;"/>
+                    <Button fx:id="btnCancel" text="Cancel" cancelButton="true" onAction="#onCancel" style="-fx-padding: 8 20;"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -3,16 +3,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: #008080;" prefHeight="60.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: #008080;" prefHeight="60.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assetsystem.controller.TopbarController">
     <padding><Insets left="20" right="20"/></padding>
     <Label text="Asset Management System" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
     <Region HBox.hgrow="ALWAYS" />
     <VBox alignment="CENTER_RIGHT">
-        <Label text="Engr. Wasfa" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Label fx:id="lblDisplayName" text="" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
         <HBox spacing="10">
-            <Hyperlink text="Change Password" style="-fx-text-fill: white; -fx-underline: false;"/>
+            <Hyperlink text="Change Password" onAction="#onChangePassword" style="-fx-text-fill: white; -fx-underline: false;"/>
             <Label text="|" style="-fx-text-fill: white;"/>
-            <Hyperlink text="Logout" style="-fx-text-fill: white; -fx-underline: false;"/>
+            <Hyperlink text="Logout" onAction="#onLogout" style="-fx-text-fill: white; -fx-underline: false;"/>
         </HBox>
     </VBox>
 </HBox>

@@ -13,10 +13,10 @@ public class Main extends Application {
         try {
             // Path must match your project structure exactly
             // Assuming the file is in src/main/resources/com/assetsystem/view/AssetDisplay.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/assetsystem/controller/AssetDisplay.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/assetsystem/controller/Login.fxml"));
             Parent root = loader.load();
             
-            primaryStage.setTitle("PEC - Asset Management System");
+            primaryStage.setTitle("PEC - Sign in");
             primaryStage.setScene(new Scene(root, 1200, 700));
             primaryStage.show();
         } catch (Exception e) {

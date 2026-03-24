@@ -10,6 +10,13 @@ public class Employees {
         this.fullName = name;
         this.department = dept;
     }
-    public String getFullName() { return fullName; }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
     public String getDepartment() {return department;}
 }

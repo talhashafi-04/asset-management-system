@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assetsystem.controller.DashboardController">
+
+    <top>
+        <fx:include fx:id="topbar" source="Topbar.fxml"/>
+    </top>
+
+    <left>
+        <fx:include fx:id="sidebar" source="Sidebar.fxml"/>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: white;">
+            <VBox spacing="20" style="-fx-background-color: white;">
+                <padding><Insets bottom="24" left="24" right="24" top="24"/></padding>
+
+                <Label text="Dashboard" style="-fx-font-size: 24px; -fx-text-fill: #337ab7;"/>
+
+                <HBox spacing="16" alignment="CENTER_LEFT">
+                    <VBox spacing="8" style="-fx-background-color: #f8f9fa; -fx-padding: 16; -fx-border-color: #dee2e6; -fx-border-radius: 4; -fx-background-radius: 4;" prefWidth="200">
+                        <Label text="Total assets" style="-fx-text-fill: #6c757d;"/>
+                        <Label fx:id="lblTotalAssets" text="0" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+                    </VBox>
+                    <VBox spacing="8" style="-fx-background-color: #f8f9fa; -fx-padding: 16; -fx-border-color: #dee2e6; -fx-border-radius: 4; -fx-background-radius: 4;" prefWidth="200">
+                        <Label text="Employees" style="-fx-text-fill: #6c757d;"/>
+                        <Label fx:id="lblTotalEmployees" text="0" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+                    </VBox>
+                    <VBox spacing="8" style="-fx-background-color: #f8f9fa; -fx-padding: 16; -fx-border-color: #dee2e6; -fx-border-radius: 4; -fx-background-radius: 4;" prefWidth="200">
+                        <Label text="Active allocations" style="-fx-text-fill: #6c757d;"/>
+                        <Label fx:id="lblActiveAllocations" text="0" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+                    </VBox>
+                </HBox>
+
+                <Label text="Assets by current status" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <TableView fx:id="statusTable" prefHeight="220" VBox.vgrow="NEVER">
+                    <columns>
+                        <TableColumn fx:id="colStatusName" text="Status" prefWidth="280"/>
+                        <TableColumn fx:id="colStatusCount" text="Count" prefWidth="120"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
