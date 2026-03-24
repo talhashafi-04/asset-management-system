@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assetsystem.controller.AssetDisplayController">
+    
+    <top>
+        <fx:include source="Topbar.fxml"/>
+    </top>
+
+    <left>
+        <fx:include source="Sidebar.fxml"/>
+    </left>
+
+    <center>
+        <VBox spacing="10" style="-fx-background-color: white;">
+            <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
+            
+            <Label text="Asset Allocation" style="-fx-font-size: 24px; -fx-text-fill: #337ab7;" />
+            
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Show" />
+                <ComboBox prefWidth="70" />
+                <Label text="entries" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label text="Search:" />
+                <TextField fx:id="searchField" promptText="Search Category, Manufacturer..." prefWidth="250"/>
+                <Button text="Clear" />
+            </HBox>
+
+            <TableView fx:id="assetTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colCategory" text="Category" prefWidth="150" />
+                    <TableColumn fx:id="colModel" text="Model" prefWidth="150" />
+                    <TableColumn fx:id="colManufacturer" text="Manufacturer" prefWidth="150" />
+                    <TableColumn fx:id="colSerial" text="Product Serial No" prefWidth="200" />
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="150" />
+                    <TableColumn fx:id="colAction" text="Action" prefWidth="150" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
