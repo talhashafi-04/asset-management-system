@@ -35,11 +35,14 @@ public class TopbarController {
 
     @FXML
     private void onChangePassword(ActionEvent e) {
-        Alert a = new Alert(Alert.AlertType.INFORMATION);
-        a.setTitle("Change password");
-        a.setHeaderText(null);
-        a.setContentText("Change password is not implemented yet.");
-        a.showAndWait();
+        javafx.stage.Window w = ((Node) e.getSource()).getScene().getWindow();
+        if (ChangePasswordDialog.show(w)) {
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("Change password");
+            a.setHeaderText(null);
+            a.setContentText("Your password was updated.");
+            a.showAndWait();
+        }
     }
 
     @FXML

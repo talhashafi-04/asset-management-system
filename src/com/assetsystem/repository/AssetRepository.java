@@ -46,7 +46,7 @@ public class AssetRepository {
 
     public List<AllocationStatus> getAllAllocationStatuses() {
         List<AllocationStatus> list = new ArrayList<>();
-        String sql = "SELECT StatusID, StatusName FROM Allocation_Status ORDER BY StatusName";
+        String sql = "SELECT StatusID, StatusName FROM Allocation_Status ORDER BY StatusID";
         Connection conn = DatabaseConnection.getConnection();
         if (conn == null) {
             return list;

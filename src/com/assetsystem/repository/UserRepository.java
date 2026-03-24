@@ -67,4 +67,28 @@ public class UserRepository {
         }
         return null;
     }
+
+    /**
+     * Updates stored password (plain text, same as {@link #authenticate}).
+     *
+     * @return {@code true} if exactly one row was updated
+     */
+    public boolean updatePassword(int userId, String newPassword) {
+        if (newPassword == null) {
+            return false;
+        }
+        String sql = "UPDATE Users SET Password = ? WHERE UserID = ?";
+        Connection conn = DatabaseConnection.getConnection();
+        if (conn == null) {
+            return false;
+        }
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, newPassword);
+            pstmt.setInt(2, userId);
+            return pstmt.executeUpdate() == 1;
+        } catch (SQLException e) {
+            System.err.println("Database error in updatePassword: " + e.getMessage());
+            return false;
+        }
+    }
 }

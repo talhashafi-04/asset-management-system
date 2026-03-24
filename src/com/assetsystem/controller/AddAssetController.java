@@ -83,6 +83,20 @@ public class AddAssetController {
         comboModel.setItems(FXCollections.observableArrayList(models));
         List<AllocationStatus> statuses = repo.getAllAllocationStatuses();
         comboStatus.setItems(FXCollections.observableArrayList(statuses));
+        selectInStoreStatus();
+    }
+
+    /** New inventory defaults to In Store (not first alphabetical, which was Allocated). */
+    private void selectInStoreStatus() {
+        for (AllocationStatus s : comboStatus.getItems()) {
+            if (s != null && "In Store".equals(s.getName())) {
+                comboStatus.getSelectionModel().select(s);
+                return;
+            }
+        }
+        if (!comboStatus.getItems().isEmpty()) {
+            comboStatus.getSelectionModel().selectFirst();
+        }
     }
 
     @FXML
@@ -154,12 +168,11 @@ public class AddAssetController {
         areaRemarks.clear();
         pickerPurchaseDate.setValue(LocalDate.now());
         comboModel.getSelectionModel().clearSelection();
-        comboStatus.getSelectionModel().clearSelection();
     }
 
     @FXML
     private void onCancel(ActionEvent e) throws IOException {
-        NavigationContext.setPendingAssetDisplaySection(SidebarSection.ALLOCATED_ASSETS);
+        NavigationContext.setPendingAssetDisplaySection(SidebarSection.MANAGE_STORE);
         Parent root = FXMLLoader.load(getClass().getResource("/com/assetsystem/controller/AssetDisplay.fxml"));
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root, 1200, 700));
